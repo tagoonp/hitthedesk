@@ -25,6 +25,7 @@
   <!-- Icons -->
   <link rel="stylesheet" href="vendor/assets/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="vendor/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <link rel="stylesheet" href="node_modules/preload.js/dist/css/preload.css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="vendor/assets/css/argon.css?v=1.2.0" type="text/css">
   <link rel="stylesheet" href="vendor/assets/custom/1.0.1/css/style.css?v=1.2.0" type="text/css">
@@ -62,7 +63,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Email" type="email" id="txtEmail">
+                    <input class="form-control" placeholder="Email" type="email" id="txtEmail" autofocus>
                   </div>
                   <div class="reqDiv text-danger dn" id="reqEmail">
                     ** Please enter e-mail address
@@ -111,11 +112,18 @@
   <script src="vendor/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/assets/vendor/js-cookie/js.cookie.js"></script>
   <script src="vendor/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script type="text/javascript" src="node_modules/preload.js/dist/js/preload.js"></script>
   <!-- Argon JS -->
   <script src="vendor/assets/js/argon.js?v=1.2.0"></script>
   <script src="vendor/assets/custom/1.0.1/js/config.js?v=1.0.1"></script>
   <script src="vendor/assets/custom/1.0.1/js/script.js?v=1.0.1"></script>
   <script src="vendor/assets/custom/1.0.1/js/authen.js?v=1.0.1"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      preload.hide()
+    })
+  </script>
 </body>
 
 </html>

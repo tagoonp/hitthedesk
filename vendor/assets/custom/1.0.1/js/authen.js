@@ -2,17 +2,19 @@ var authen = {
   login(){
     preload.show()
     var param = {username: $('#txtEmail').val(), password: $('#txtPassword').val()}
-    var jxr = $.post(conf.api + 'authen?stage=register', param, function(){}, 'json')
+    var jxr = $.post(conf.api + 'authen?stage=login', param, function(){}, 'json')
                .always(function(snap){
                  if(snap.status == 'Success'){
-                   window.location = './?uid=' + snap.uid
-                 }else if(snap.status == 'Duplicate'){
-                   $('#reqEmail').removeClass('dn')
-                   $('#reqEmail').text('** This e-mail not available')
-                   preload.hide()
+                   window.localStorage.setItem(conf.prefix + '_uid', snap.uid)
+                   window.localStorage.setItem(conf.prefix + '_role', snap.role)
+                   if(snap.role == 'common'){
+                     window.location = './?uid=' + snap.uid
+                   }else{
+                     window.location = './' + snap.role + '/?uid=' + snap.uid
+                   }
                  }else{
                    $('#reqEmail').removeClass('dn')
-                   $('#reqEmail').text('** Can not register')
+                   $('#reqEmail').text('** Invalid e-mail or password')
                    preload.hide()
                  }
                })
@@ -52,6 +54,8 @@ $(function(){
       $('#reqPassword').removeClass('dn')
     }
     if($check != 0){ return ;}
+
+    authen.login()
   })
 
   $('.registerform').submit(function(){

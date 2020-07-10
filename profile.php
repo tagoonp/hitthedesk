@@ -41,6 +41,10 @@ include "user.inc.php";
         <nav class="navbar navbar-top fixed-top navbar-expand navbar-dark bg-primary border-bottom">
           <div class="container">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <a class="mr-3 pl-2" href="./?uid=<?php echo $uid; ?>">
+                <i class="fas fa-home text-white" style="font-size: 1.3em;"></i>
+              </a>
+
               <!-- Search form -->
               <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
                 <div class="form-group mb-0">
@@ -226,89 +230,63 @@ include "user.inc.php";
 
         <div class="container mt-7">
           <div class="row">
-            <div class="col-12 col-sm-3 d-none d-sm-block">
-              <a class="navbar-brand" href="javascript:void(0)">
-                <img src="vendor/assets/img/brand/blue.png" class="img-fluid" alt="...">
-              </a>
-              <div class="item mt-4 pb-0">
-                <h3 class="th400 mb-0 text-primary">เมนูหลัก</h3>
-              </div>
-              <div class="item active th">
-                <div class="row">
-                  <div class="col-10">
-                    ผลิตภัณฑ์แนะนำ
-                  </div>
-                  <div class="col-2">
+            <div class="col-12 col-sm-6 d-none d-sm-block">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h3 class="th400 mb-0">ข้อมูลส่วนตัว</h3>
+                </div>
+                <div class="card-body p-3">
 
-                  </div>
                 </div>
               </div>
-              <div class="item th non-active">
-                <div class="row">
-                  <div class="col-10">
-                    ร้านของฉัน
-                  </div>
-                  <div class="col-2">
+              <!-- .card -->
 
-                  </div>
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h3 class="th400 mb-0">ร้านขายของ</h3>
+                </div>
+                <div class="card-body p-3">
+
                 </div>
               </div>
-              <div class="item th non-active">
-                <div class="row">
-                  <div class="col-10">
-                    ผลิตภัณฑ์มีโปรโมชั่น
-                  </div>
-                  <div class="col-2">
+              <!-- .card -->
 
-                  </div>
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h3 class="th400 mb-0">รูปภาพ</h3>
+                </div>
+                <div class="card-body p-3">
+
                 </div>
               </div>
-              <div class="item th non-active">
-                <div class="row">
-                  <div class="col-10">
-                    ผลิตภัณฑ์ที่น่าสนใจ
-                  </div>
-                  <div class="col-2">
+              <!-- .card -->
 
-                  </div>
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h3 class="th400 mb-0">เพื่อน</h3>
+                </div>
+                <div class="card-body p-3">
+
                 </div>
               </div>
-              <div class="item mt-4 pb-0">
-                <h3 class="th400 mb-0 text-primary">ทางลัดอื่น ๆ</h3>
-              </div>
-              <div class="item th non-active">
-                <div class="row">
-                  <div class="col-10">
-                    Blog ของคุณ
-                  </div>
-                  <div class="col-2">
+              <!-- .card -->
 
-                  </div>
-                </div>
-              </div>
-              <div class="item th non-active">
-                <div class="row">
-                  <div class="col-10">
-                    Rewards
-                  </div>
-                  <div class="col-2">
-
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div class="col-12 col-sm-6">
+              <div class="pb-3">
+                <button type="button" class="btn btn-gray"><img src="./img/pencil.png" alt="" style="width: 20px;"> เขียนบทความ</button>
+              </div>
               <div class="card mb-3">
                 <div class="card-body p-3">
                   <div class="row">
                     <div class="col-12">
-                      <a class="nav-link pr-0" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
                           <span class="avatar avatar-sm rounded-circle">
                             <img alt="Image placeholder" src="vendor/assets/img/theme/team-4.jpg">
                           </span>
-                          <div class="media-body  ml-2  d-none d-lg-block" onclick="window.location='./profile?uid=<?php echo $uid; ?>'">
+                          <div class="media-body  ml-2  d-none d-lg-block">
                             <span class="mb-0 text-sm  font-weight-bold"><?php echo $userData['fullname']; ?></span>
                           </div>
                         </div>
@@ -324,14 +302,41 @@ include "user.inc.php";
                 </div>
                 <div class="card-body p-3">
                   <div class="row">
-                    <div class="col-4 th text-center">
-                      อัพโหลดรูป
+                    <div class="col-5 th text-left pr-0">
+                      <img src="./img/photo.png" alt="" style="width: 20px;"> อัพโหลดรูป
                     </div>
-                    <div class="col-4 th text-center">
-                      ใส่แผนที่
+                    <div class="col-4 th text-left pl-0 pr-0">
+                      <img src="./img/map.png" alt="" style="width: 20px;"> ใส่แผนที่
                     </div>
-                    <div class="col-4 th text-center">
-                      แชร์อื่น ๆ
+                    <div class="col-2 offset-1 th text-right">
+                      <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+                        <li class="nav-item dropdown pt-0">
+                          <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="media align-items-right">
+                              <img src="./img/menu.png" alt="" style="width: 20px;">
+                            </div>
+                          </a>
+                          <div class="dropdown-menu  dropdown-menu-right ">
+                            <a href="profile?uid=<?php echo $uid; ?>" class="dropdown-item th">
+                              <i class="ni ni-single-02"></i>
+                              <span>โปรไฟล์</span>
+                            </a>
+                            <a href="settings?uid=<?php echo $uid; ?>" class="dropdown-item th">
+                              <i class="ni ni-settings-gear-65"></i>
+                              <span>ตั้งค่า</span>
+                            </a>
+                            <a href="activities?uid=<?php echo $uid; ?>" class="dropdown-item th">
+                              <i class="ni ni-calendar-grid-58"></i>
+                              <span>กิจกรรม</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="Javascript:user.logout()" class="dropdown-item">
+                              <i class="ni ni-user-run"></i>
+                              <span>ออกจากระบบ</span>
+                            </a>
+                          </div>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -412,17 +417,6 @@ include "user.inc.php";
                 </div>
               </div>
 
-            </div>
-
-            <div class="col-12 col-sm-3">
-              <div class="card">
-                <div class="card-header th400 p-3">
-                  ค้นหาสินค้าจากแผนที่
-                </div>
-                <div class="card-body">
-
-                </div>
-              </div>
             </div>
 
           </div>
